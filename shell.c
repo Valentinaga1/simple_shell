@@ -17,6 +17,12 @@ int main()
 			return (1);
 		}
 		c = getline(&buffer, &size, stdin);
+		if (c == EOF)
+		{
+			_putchar("\n");
+			free(buffer);
+			exit(EXIT_SUCCESS);
+		}
 		if((_strcmp(buffer,"exit\n") == 0))
 		{
 			free(buffer);
