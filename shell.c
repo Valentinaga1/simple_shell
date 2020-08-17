@@ -18,12 +18,13 @@ int main()
 	char  **tokens = NULL, *buffer = NULL;
 	size_t size;
 	int c;
-
+			
+	if (isatty(STDIN_FILENO))
+		write(STDOUT_FILENO, "$ ", 2);
+	signal(SIGINT, handler);
+	
 	while(1)
 	{
-		if (isatty(STDIN_FILENO))
-			write(STDOUT_FILENO, "$ ", 2);
-		signal(SIGINT, handler);
 		c = getline(&buffer, &size, stdin);
 		if (c == EOF)
 		{
