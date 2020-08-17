@@ -1,5 +1,15 @@
 #include "shell.h"
 /**
+ * handler- Function to handle signals.
+ * @sign: Void.
+ * Return: Void.
+ */
+void handler(int sign)
+{
+	(void) sign;
+	write(STDOUT_FILENO, "\n$ ", 4);
+}
+/**
  * main - 
  * 
  */
@@ -11,11 +21,9 @@ int main()
 
 	while(1)
 	{
-		if((write(1, "$ ", 2)) == -1)
-		{
-			perror("Error");
-			return (1);
-		}
+		if (isatty(STDIN_FILENO))
+			write(STDOUT_FILENO, "$ ", 2);
+		signal(SIGINT, handler);
 		c = getline(&buffer, &size, stdin);
 		if (c == EOF)
 		{
@@ -39,6 +47,8 @@ int main()
 			tokens = tokenize(buffer);
 			execute(tokens);
 			free(tokens);
+			if (isatty(STDIN_FILENO))
+				write(STDOUT_FILENO, "$ ", 2);
 	}
 	free(buffer);
 	return 0;
