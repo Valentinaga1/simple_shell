@@ -14,7 +14,10 @@ void execute(char **tokens);
 void printenvironment(void);
 void _putchar(char *str);
 char * _getenv(char *path);
+void handler(int sign);
+
 char *_strdup(char *str);
 char * str_cat(char *str1, char slash, char *str2);
 int _strcmp(char *s1, char *s2);
+
 #endif
