@@ -1,0 +1,56 @@
+.\" Manpage for simple shell Project
+.TH Simple Shell Manpage "20 August 2020" "version 1.0"
+
+.SH NAME
+.B simple_shell - a simple UNIX command interpreter in C
+\
+simple_shell - simple_shell (hsh) is a simple and basic shell, command-lne interpreter that provides you an interface to the Linux system, permi you execute commands like shell (sh) console command.
+
+Take input when you type a command and execute some functions based on that input and show you the execution of that function in other words: the output command.
+
+.SH SYNOPSIS
+The simple shell is a simplified version of  the original shell, written by Ken Thompson
+ ./hsh
+ /bin/[command] [option]
+ [command] [option]
+
+.SH DESCRIPTION
+Is a simple hsh command language interpreter that executes commands using the path of this command that stored in the bin directory, the shell read from the standard input through the getline command, is based on the shell designed by Ken Thompson
+
+.SH EXAMPLE
+$  /bin/ls -l  
+  -rw-rw-r-- 1 vagrant vagrant   288 Aug 13 20:34 envprint.c  
+  -rwxrwxr-x 1 vagrant vagrant 13956 Aug 13 15:32 ex  
+  -rw-rw-r-- 1 vagrant vagrant   807 Aug 15 22:49 execute.c  
+
+$  ls -l  
+  -rw-rw-r-- 1 vagrant vagrant   288 Aug 13 20:34 envprint.c  
+  -rwxrwxr-x 1 vagrant vagrant 13956 Aug 13 15:32 ex  
+  -rw-rw-r-- 1 vagrant vagrant   807 Aug 15 22:49 execute.c   
+
+$ /bin/pwd
+  /home/vagrant/simple_shell
+
+$ hhhhh
+  Error:: No such file or directory
+
+.SH BUILTIN COMMANDS
+
+.SS env
+- list the current environment variables
+
+.SS exit
+- exit the shell
+
+.SH SEE ALSO
+strtok(3), getline(3), fork(2), execve(2), wait(2), malloc (3).
+
+.SH BUGS
+
+If there is a bug, report to 1821@holbertonschool.com or 1881@holbertonschool.com
+
+.SH AUTHOR
+.PP
+Daniel Villalba (https://github.com/DanielVillalba-holberton) - Student at Holberton School Colombia.
+.PP
+Valentina Gómez (https://github.com/Valentinaga1) - Student at Holberton School Colombia.
