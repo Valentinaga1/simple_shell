@@ -21,7 +21,7 @@ void execute(char **tokens)
 		{
 			if((_strcmp(tokens[0],"env") == 0) || (_strcmp(tokens[0],"printenv") == 0))
 				printenvironment();
-			path = getenv("PATH");	
+			path = _getenv("PATH");	
 			tok = strtok(path, ":");
 			while (tok != NULL)
 			{
