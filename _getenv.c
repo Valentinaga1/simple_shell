@@ -1,10 +1,7 @@
 #include "shell.h"
 /**
- * 
+ * _getenv - 
  * 
  * 
  */
-char * _getenv(char *name)
-{
 
-}
