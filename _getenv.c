@@ -9,6 +9,7 @@ char *_getenv(char *path)
     char *token = NULL, **tok = NULL;
 	int i = 0, j = 0;
     (void)path;
+    printf("antes");
     tok = malloc(sizeof(char *) * 1024);
     while (environ[j])
     {
@@ -32,5 +33,3 @@ char *_getenv(char *path)
 
     return(NULL);
 }
-
-
