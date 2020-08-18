@@ -2,13 +2,13 @@
 /**
  * tokenize - Extract tokens from strings
  * @str: String to be parser.
- * @delim: Delimiter character.
  * Return: Tokenized string.
  */
 char **tokenize(char *str)
 {
 	char *token = NULL, **tok = NULL;
 	int i;
+
 	tok = malloc(sizeof(char *) * 1024);
 	if (tok == NULL)
 		exit(0);
@@ -20,6 +20,6 @@ char **tokenize(char *str)
 		token = strtok(NULL, " \n");
 		i++;
 	}
-	tok[i] = NULL; 
+	tok[i] = NULL;
 	return (tok);
 }

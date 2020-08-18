@@ -25,22 +25,21 @@ char *_strdup(char *str)
 }
 /**
  * str_cat - Function to concat 3 strings
- * @str1:
- * @slash:
- * @str1:
+ * @str1: String 1 to concat
+ * @slash: Character '/'.
+ * @str2: String 2 to concat
  *
  * Return: NULL or the array.
 */
-char * str_cat(char *str1, char slash, char *str2)
+char *str_cat(char *str1, char slash, char *str2)
 {
 	char *concat;
-	int i,j;
+	int i, j;
 
 	concat = malloc(sizeof(char) * strlen(str1) + strlen(str2) + 2);
 
-	if(concat == NULL)
+	if (concat == NULL)
 		return (NULL);
-	
 	i = 0;
 	while (str1[i] != '\0')
 	{
@@ -81,4 +80,17 @@ int _strcmp(char *s1, char *s2)
 		}
 	}
 	return (0);
+}
+/**
+ * _strlen - returns the length of a string.
+ * @s: string
+ * Return: void
+ */
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != 0)
+	i++;
+	return (i);
 }

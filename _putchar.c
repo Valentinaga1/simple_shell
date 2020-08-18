@@ -11,6 +11,6 @@ void _putchar(char *str)
 {
 	int len;
 
-	len = strlen(str);
+	len = _strlen(str);
 	write(1, str, len);
 }
