@@ -4,10 +4,10 @@
  * 
  * 
  */
-void execute(char **tokens)
+void execute(char **tokens, char **argv)
 {
 	pid_t pid;
-	int status;
+	int status, lsn, lsn2;
 	char *path, *tok, *concat;
 	pid = fork();
 	if (pid == -1)
@@ -29,12 +29,30 @@ void execute(char **tokens)
 				if(concat != NULL)
 				{
 					if (execve(concat, tokens, NULL) != -1)
-						break;
-					tok = strtok(NULL, ":");			
+						exit(EXIT_SUCCESS);
+					tok = strtok(NULL, ":");	
 				}
 			}
-			if (execve(tokens[0], tokens, NULL) == -1)
-				/*printf("./hsh: 1: %s: No such file or directory\n", tokens[0] );*/
+			if (execve(concat, tokens, NULL) == -1)
+					{
+						lsn2 = strlen(tokens[0]);
+						write(STDOUT_FILENO, tokens[0], lsn2);
+						write(STDOUT_FILENO, ": command not found\n", 21);
+						exit(EXIT_FAILURE);
+					}
+		}
+		if (execve(tokens[0], tokens, NULL) != -1)
+			exit(EXIT_SUCCESS);
+		else if (execve(tokens[0], tokens, NULL) == -1)
+		{
+			lsn = strlen(argv[0]);
+			lsn2 = strlen(tokens[0]);
+			write(STDOUT_FILENO, argv[0], lsn);
+			write(STDOUT_FILENO,": ", 2);
+			write(STDOUT_FILENO, tokens[0], lsn2);
+			write(STDOUT_FILENO, ": No such file or directory\n", 29);
+			
+			exit(EXIT_FAILURE);
 		}
 	}
 	else

@@ -10,7 +10,7 @@
 #include <signal.h>
 	extern char **environ;
 char **tokenize(char *str);
-void execute(char **tokens);
+void execute(char **tokens, char **argv);
 void printenvironment(void);
 void _putchar(char *str);
 char * _getenv(char *path);

@@ -13,12 +13,12 @@ void handler(int sign)
  * main - 
  * 
  */
-int main() 
+int main(int argc, char **argv) 
 {
 	char  **tokens = NULL, *buffer = NULL;
 	size_t size;
 	int c;
-			
+	(void) argc;
 	if (isatty(STDIN_FILENO))
 		write(STDOUT_FILENO, "$ ", 2);
 	signal(SIGINT, handler);
@@ -47,7 +47,7 @@ int main()
 			if(buffer == NULL)
 				return (1);
 			tokens = tokenize(buffer);
-			execute(tokens);
+			execute(tokens, argv);
 			free(tokens);
 			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "$ ", 2);
