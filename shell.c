@@ -19,8 +19,13 @@ int main(int argc, char **argv)
 	size_t size;
 	int c;
 	(void) argc;
+	
+	c = getline(&buffer, &size, stdin);
+
 	if (isatty(STDIN_FILENO))
 		write(STDOUT_FILENO, "$ ", 2);
+	else if(isatty(STDOUT_FILENO))
+		print_no_interactive(buffer, argv[0]);
 	signal(SIGINT, handler);
 
 	while(1)
