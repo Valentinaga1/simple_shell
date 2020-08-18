@@ -30,14 +30,11 @@ void execute(char **tokens)
 				{
 					if (execve(concat, tokens, NULL) != -1)
 						break;
-					tok = strtok(NULL, ":");
+					tok = strtok(NULL, ":");			
 				}
 			}
-		}
-		else
-		{
 			if (execve(tokens[0], tokens, NULL) == -1)
-				perror("Error:");
+				/*printf("./hsh: 1: %s: No such file or directory\n", tokens[0] );*/
 		}
 	}
 	else
