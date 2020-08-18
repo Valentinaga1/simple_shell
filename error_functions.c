@@ -2,7 +2,7 @@
 /**
  * print_no_interactive - Print error message in non interactive mode.
  * @buffer:
- * 
+ * @argv:
  */
 void print_no_interactive(char *buffer, char *argv)
 {
