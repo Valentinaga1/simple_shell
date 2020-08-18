@@ -22,13 +22,14 @@ int main()
 	if (isatty(STDIN_FILENO))
 		write(STDOUT_FILENO, "$ ", 2);
 	signal(SIGINT, handler);
-	
+
 	while(1)
 	{
 		c = getline(&buffer, &size, stdin);
 		if (c == EOF)
 		{
-			_putchar("\n");
+			if (isatty(STDIN_FILENO))
+				write(STDOUT_FILENO, "\n", 1);
 			free(buffer);
 			exit(EXIT_SUCCESS);
 		}
