@@ -31,6 +31,7 @@ void execute(char **tokens)
 					if (execve(concat, tokens, NULL) != -1)
 						break;
 					tok = strtok(NULL, ":");
+
 				}
 			}
 		}
