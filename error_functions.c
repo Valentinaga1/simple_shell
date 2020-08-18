@@ -1,6 +1,7 @@
 #include "shell.h"
 /**
  * print_no_interactive - Print error message in non interactive mode.
+ * @buffer:
  * 
  */
 void print_no_interactive(char *buffer, char *argv)
