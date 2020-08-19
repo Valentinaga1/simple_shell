@@ -17,7 +17,7 @@ void printenvironment(void);
 void _putchar(char *str);
 char *_getenv(char *path);
 void handler(int sign);
-
+void prompt(char **argv);
 void print_no_interactive(char *buffer, char *argv);
 void print_interactive(char **tokens);
 void print_interactive2(char **tokens, char **argv);

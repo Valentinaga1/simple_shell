@@ -29,17 +29,16 @@ void no_interactive(char **argv)
 	signal(SIGINT, handler);
 }
 /**
- * main - Main function of shell.
- * @argc: Number of arguments passed.
+ * prompt - prompt function of shell.
  * @argv: Array of arguments of main.
- * Return: Zero.
+ * Return: Void.
  */
-int main(int argc, char **argv)
+void prompt(char **argv)
 {
 	char  **tokens = NULL, *buffer = NULL;
 	size_t size;
 	int c;
-	(void) argc;
+
 	no_interactive(argv);
 
 	while (1)
@@ -61,10 +60,10 @@ int main(int argc, char **argv)
 		{
 			perror("Error");
 			free(buffer);
-			return (1);
+			exit(EXIT_FAILURE);
 		}
 			if (buffer == NULL)
-				return (1);
+				exit(EXIT_FAILURE);
 			tokens = tokenize(buffer);
 			execute(tokens, argv);
 			free(tokens);
@@ -72,5 +71,17 @@ int main(int argc, char **argv)
 				write(STDOUT_FILENO, "$ ", 2);
 	}
 	free(buffer);
+	exit(EXIT_SUCCESS);
+}
+/**
+ * main - Main function of shell.
+ * @argc: Number of arguments passed.
+ * @argv: Array of arguments of main.
+ * Return: Zero.
+ */
+int main(int argc, char **argv)
+{
+	(void) argc;
+	prompt(argv);
 	return (0);
 }
