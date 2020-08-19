@@ -3,6 +3,7 @@
  * execute - Function to execute a process.
  * @tokens: Tokenized string.
  * @argv: Array of arguments of main.
+ * @env: Environment variable.
  * Return: void.
  */
 void execute(char **tokens, char **argv, char **env)
@@ -45,7 +46,6 @@ void execute(char **tokens, char **argv, char **env)
 			exit(EXIT_SUCCESS);
 		else if (execve(tokens[0], tokens, NULL) == -1)
 			print_interactive2(tokens, argv);
-	}
-	else
+	} else
 		wait(&status);
 }

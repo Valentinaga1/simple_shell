@@ -31,6 +31,7 @@ void no_interactive(char **argv)
 /**
  * prompt - prompt function of shell.
  * @argv: Array of arguments of main.
+ * @env: Environment variable.
  * Return: Void.
  */
 void prompt(char **argv, char **env)
@@ -77,6 +78,7 @@ void prompt(char **argv, char **env)
  * main - Main function of shell.
  * @argc: Number of arguments passed.
  * @argv: Array of arguments of main.
+ * @env: Environment variable.
  * Return: Zero.
  */
 int main(int argc, char **argv, char **env)
