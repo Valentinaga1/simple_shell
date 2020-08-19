@@ -33,7 +33,7 @@ void no_interactive(char **argv)
  * @argv: Array of arguments of main.
  * Return: Void.
  */
-void prompt(char **argv)
+void prompt(char **argv, char **env)
 {
 	char  **tokens = NULL, *buffer = NULL;
 	size_t size;
@@ -65,7 +65,7 @@ void prompt(char **argv)
 			if (buffer == NULL)
 				exit(2);
 			tokens = tokenize(buffer);
-			execute(tokens, argv);
+			execute(tokens, argv, env);
 			free(tokens);
 			if (isatty(STDIN_FILENO))
 				write(STDOUT_FILENO, "$ ", 2);
@@ -79,9 +79,9 @@ void prompt(char **argv)
  * @argv: Array of arguments of main.
  * Return: Zero.
  */
-int main(int argc, char **argv)
+int main(int argc, char **argv, char **env)
 {
 	(void) argc;
-	prompt(argv);
+	prompt(argv, env);
 	return (0);
 }
