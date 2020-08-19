@@ -6,16 +6,12 @@
  */
 void printenvironment(void)
 {
-	char *jump = "\n";
 	int i = 0;
 
-	while (environ[i] != NULL)
+	while (environ[i])
 	{
-		if (_strcmp(environ[i], "_=./hsh") == 0)
-			i++;
 		_putchar(environ[i]);
-		_putchar(jump);
+		_putchar("\n");
 		i++;
 	}
-	exit(EXIT_SUCCESS);
 }
