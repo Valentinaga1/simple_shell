@@ -60,10 +60,10 @@ void prompt(char **argv)
 		{
 			perror("Error");
 			free(buffer);
-			exit(EXIT_FAILURE);
+			exit(2);
 		}
 			if (buffer == NULL)
-				exit(EXIT_FAILURE);
+				exit(2);
 			tokens = tokenize(buffer);
 			execute(tokens, argv);
 			free(tokens);
