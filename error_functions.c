@@ -15,7 +15,7 @@ void print_no_interactive(char *buffer, char *argv)
 	write(STDOUT_FILENO, token, _strlen(token));
 	write(STDOUT_FILENO, ": not found\n", 13);
 
-	exit(EXIT_FAILURE);
+	exit(127);
 }
 /**
  * print_interactive - Print error message in non interactive mode.
@@ -29,7 +29,7 @@ void print_interactive(char **tokens)
 	lsn2 = _strlen(tokens[0]);
 	write(STDOUT_FILENO, tokens[0], lsn2);
 	write(STDOUT_FILENO, ": command not found\n", 21);
-	exit(EXIT_FAILURE);
+	exit(127);
 }
 /**
  * print_interactive2 - Print error message 2 in non interactive mode.
@@ -48,5 +48,5 @@ void print_interactive2(char **tokens, char **argv)
 	write(STDOUT_FILENO, tokens[0], lsn2);
 	write(STDOUT_FILENO, ": No such file or directory\n", 29);
 
-	exit(EXIT_FAILURE);
+	exit(2);
 }
