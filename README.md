@@ -22,7 +22,7 @@ In this repository you will find our version of the Shell: simple Unix command i
 - No more than 5 functions per file
 - All header files should be include guarded
 - System calls are only used when needed
-## List of allowed functions and system calls.  
+## ✔️ List of allowed functions and system calls.  
 access (man 2 access),
 chdir (man 2 chdir),
 close (man 2 close),
@@ -57,15 +57,18 @@ fflush (man 3 fflush),
 Simple Shell files:
 File  | Description
 ------------- | -------------
+[AUTHORS](https://github.com/Valentinaga1/simple_shell/blob/master/AUTHORS "AUTHORS")  | Contains the authors of the project.
+[_getenv.c](https://github.com/Valentinaga1/simple_shell/blob/master/_getenv.c "_getenv.c")  |  Contains Function to get the environment variable.
 [_putchar.c](https://github.com/Valentinaga1/simple_shell/blob/master/_putchar.c "_putchar.c")  | Contains the function to writes the character c to stdout
-[_which.c](https://github.com/Valentinaga1/simple_shell/blob/master/_which.c "_which.c")  | Contains the function to locate a command
-[envprint.c](https://github.com/Valentinaga1/simple_shell/blob/master/envprint.c "envprint.c")  | Conatins the function to prints the environment
-[execute.c](https://github.com/Valentinaga1/simple_shell/blob/master/execute.c "execute.c")  | Contains the functions to execute a process,and to control ctrl + c signal . 
-[free.c](https://github.com/Valentinaga1/simple_shell/blob/master/free.c "free.c")  | Functions to free memory allocation 
-[shell.c](https://github.com/Valentinaga1/simple_shell/blob/master/shell.c "shell.c")  | Contains the main function for the shell.
-[shell.h](https://github.com/Valentinaga1/simple_shell/blob/master/shell.h "shell.h")  | Header file. Contains al the functions, and the used libraries.
-[stringFunctions.c](https://github.com/Valentinaga1/simple_shell/blob/master/stringFunctions.c "stringFunctions.c")  | Contains auxilair functions to handdle the strings.
-[strtok.c](https://github.com/Valentinaga1/simple_shell/blob/master/strtok.c "strtok.c")  | Contains the function to extract tokens from strings 
+[error_functions.c](https://github.com/Valentinaga1/simple_shell/blob/master/error_functions.c "error_functions.c")  | Contains the functions to print messagge errors . 
+[execute.c](https://github.com/Valentinaga1/simple_shell/blob/master/execute.c "execute.c")  | Contains Functions to execute a process. 
+[man_1_simple_shell](https://github.com/Valentinaga1/simple_shell/blob/master/man_1_simple_shell "man_1_simple_shell")  | Contains the man page of our simple shell.
+[printenvironment.c](https://github.com/Valentinaga1/simple_shell/blob/master/printenvironment.c "printenvironment.c")  | Contains the function to prints the environment.
+[shell.c](https://github.com/Valentinaga1/simple_shell/blob/master/shell.c "shell.c")  | Contains the Function to handle signals, to handle Not interactive mode, and the main function.
+[shell.h](https://github.com/Valentinaga1/simple_shell/blob/master/shell.h "shell.h")  | Header file. Contain all the prototype name of the functions.
+[strings.c](https://github.com/Valentinaga1/simple_shell/blob/master/stringFunctions.c "strings.c")  | Contains auxilair functions to handdle the strings.
+[tokenize.c](https://github.com/Valentinaga1/simple_shell/blob/master/tokenize.c "tokenize.c")  | Contains the function to extract tokens from strings.  
+
 ## ⚙ Compilation
 ```
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
