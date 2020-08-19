@@ -1,15 +1,16 @@
 #include "shell.h"
 /**
  * printenvironment - Function to prints the environment.
- * @void: No arguments need it.
+ * @env: Env variable.
  * Return: Void.
  */
-void printenvironment(void)
+void printenvironment(char **env)
 {
-	int i;
-	for (i = 0; environ[i]; i++)
+	int i = 0;
+
+	while (env[i])
 	{
-		_putchar(environ[i]);
+		_putchar(env[i]);
 		_putchar("\n");
 	}
 }
