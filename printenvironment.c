@@ -6,12 +6,10 @@
  */
 void printenvironment(void)
 {
-	int i = 0;
-
-	while (environ[i])
+	int i;
+	for (i = 0; environ[i]; i++)
 	{
 		_putchar(environ[i]);
 		_putchar("\n");
-		i++;
 	}
 }
