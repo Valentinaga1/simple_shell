@@ -70,6 +70,6 @@ void execute(char **tokens, char **argv, char **env, int *st_ex)
 	{
 		wait(&status);
 		if (WIFEXITED(status))
-			*st_ex = WIFEXITED(status);
+			*st_ex = WEXITSTATUS(status);
 	}
 }
