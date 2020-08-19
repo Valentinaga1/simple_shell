@@ -12,14 +12,17 @@
 
 void no_interactive(char **argv);
 char **tokenize(char *str);
-void execute(char **tokens, char **argv, char **env, int *st_ex);
+void execute(char **tokens, char **argv, char **env);
 void printenvironment(char **env);
 void _putchar(char *str);
 char *_getenv(char *path);
 void handler(int sign);
-void pro_execute(char **tokens, char **env, char **argv);
+void prompt(char **argv, char **env);
 
-void exit_f(char **tokens);
+void print_no_interactive(char *buffer, char *argv);
+void print_interactive(char **tokens);
+void print_interactive2(char **tokens, char **argv);
+
 char *_strdup(char *str);
 char *str_cat(char *str1, char slash, char *str2);
 int _strcmp(char *s1, char *s2);
