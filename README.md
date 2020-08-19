@@ -66,7 +66,7 @@ File  | Description
 [printenvironment.c](https://github.com/Valentinaga1/simple_shell/blob/master/printenvironment.c "printenvironment.c")  | Contains the function to prints the environment.
 [shell.c](https://github.com/Valentinaga1/simple_shell/blob/master/shell.c "shell.c")  | Contains the Function to handle signals, to handle Not interactive mode, and the main function.
 [shell.h](https://github.com/Valentinaga1/simple_shell/blob/master/shell.h "shell.h")  | Header file. Contain all the prototype name of the functions.
-[strings.c](https://github.com/Valentinaga1/simple_shell/blob/master/stringFunctions.c "strings.c")  | Contains auxilair functions to handdle the strings.
+[strings.c](https://github.com/Valentinaga1/simple_shell/blob/master/string.c "strings.c")  | Contains auxilair functions to handdle the strings.
 [tokenize.c](https://github.com/Valentinaga1/simple_shell/blob/master/tokenize.c "tokenize.c")  | Contains the function to extract tokens from strings.  
 
 ## ⚙ Compilation
