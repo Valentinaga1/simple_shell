@@ -11,6 +11,8 @@ void printenvironment(void)
 
 	while (environ[i] != NULL)
 	{
+		if (_strcmp(environ[i], "_=./hsh") == 0)
+			i++;
 		_putchar(environ[i]);
 		_putchar(jump);
 		i++;
