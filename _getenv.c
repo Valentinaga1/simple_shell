@@ -10,6 +10,8 @@ char *_getenv(char *path)
 	int i = 0, j = 0;
 
 	tok = malloc(sizeof(char *) * 1024);
+	if (tok == NULL)
+		return (NULL);
 	while (environ[j])
 	{
 		token = strtok(environ[j], "=");
