@@ -5,7 +5,7 @@
  * @argv: Array of arguments of main.
  * Return: void.
  */
-void execute(char **tokens, char **argv)
+void execute(char **tokens, char **argv, char **env)
 {
 	pid_t pid;
 	int status;
@@ -21,9 +21,9 @@ void execute(char **tokens, char **argv)
 	{
 		if (tokens[0][0] != '/')
 		{
-			if ((_strcmp(tokens[0], "env") == 0) ||
-			(_strcmp(tokens[0], "printenv") == 0))
-				printenvironment();
+			if (((_strcmp(tokens[0], "env") == 0) ||
+			(_strcmp(tokens[0], "printenv") == 0)) && (tokens[1] == NULL))
+				printenvironment(env);
 			path = _getenv("PATH");
 			if (path == NULL)
 				exit(EXIT_FAILURE);
