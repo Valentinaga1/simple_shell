@@ -12,6 +12,5 @@ void printenvironment(char **env)
 	{
 		_putchar(env[i]);
 		_putchar("\n");
-		i++;
 	}
 }
