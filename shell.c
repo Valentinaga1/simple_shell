@@ -16,16 +16,10 @@ void handler(int sign)
  */
 void no_interactive(char **argv)
 {
-	char *buffer = NULL;
-	size_t size;
+	(void)argv;
 
 	if (isatty(STDIN_FILENO))
 		write(STDOUT_FILENO, "$ ", 2);
-	else if (isatty(STDOUT_FILENO))
-	{
-		getline(&buffer, &size, stdin);
-		print_no_interactive(buffer, argv[0]);
-	}
 	signal(SIGINT, handler);
 }
 /**
